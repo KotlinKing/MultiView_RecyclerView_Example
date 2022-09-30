@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="layoutTwo"
+            type="com.example.multiview_recyclerview_example.model.LayoutTwo" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/grey"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/icLayoutTwo"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@{layoutTwo.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/ic_layout_second" />
+
+        <TextView
+            android:id="@+id/tvTitleLayoutTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+            android:text="@{layoutTwo.title}"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@id/icLayoutTwo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icLayoutTwo"
+            app:layout_constraintTop_toTopOf="@id/icLayoutTwo"
+            tools:text="Layout Two Title" />
+
+        <TextView
+            android:id="@+id/tvDateLayoutTwo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{layoutTwo.date}"
+            app:layout_constraintBottom_toBottomOf="@id/icLayoutTwo"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitleLayoutTwo"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleLayoutTwo"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleLayoutTwo"
+            tools:text="@tools:sample/date/mmddyy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

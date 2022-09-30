@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="layoutOne"
+            type="com.example.multiview_recyclerview_example.model.LayoutOne" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@color/grey"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivLargeOne"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@{layoutOne.image}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@drawable/ic_layout_one" />
+
+        <TextView
+            android:id="@+id/tvTitleLayoutOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{layoutOne.title}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivLargeOne"
+            tools:text="Layout One Title" />
+
+        <TextView
+            android:id="@+id/tvDescriptionLayoutOne"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{layoutOne.description}"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/tvTitleLayoutOne"
+            app:layout_constraintStart_toStartOf="@id/tvTitleLayoutOne"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleLayoutOne"
+            tools:text="Layout one description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
