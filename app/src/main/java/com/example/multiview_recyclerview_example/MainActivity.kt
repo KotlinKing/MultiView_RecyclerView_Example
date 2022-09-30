@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerViewData = binding.rvData
         val dataList = DummyData.getDummyData(this)
-        val newsAdapter = DataAdapter(dataList)
+        val dataAdapter = DataAdapter(dataList)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        recyclerViewData.adapter = newsAdapter
+        recyclerViewData.adapter = dataAdapter
         recyclerViewData.layoutManager = layoutManager
         recyclerViewData.setHasFixedSize(true)
         recyclerViewData.addItemDecoration(
